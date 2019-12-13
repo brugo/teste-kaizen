@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RestangularModule, Restangular } from 'ngx-restangular';
+import { ListaTesteComponent } from './lista-teste/lista-teste.component';
 
 // Function for setting the default restangular configuration
 export function RestangularConfigFactory (RestangularProvider) {
@@ -12,7 +13,8 @@ export function RestangularConfigFactory (RestangularProvider) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListaTesteComponent
   ],
   imports: [
     BrowserModule,
