@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RestangularModule, Restangular } from 'ngx-restangular';
+
+// Function for setting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider) {
+  RestangularProvider.setBaseUrl('https://jsonplaceholder.typicode.com');
+}
 
 @NgModule({
   declarations: [
@@ -10,7 +16,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RestangularModule.forRoot(RestangularConfigFactory),
   ],
   providers: [],
   bootstrap: [AppComponent]
